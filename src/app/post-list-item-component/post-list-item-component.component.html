@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col">{{ post.title }}</div>
+  <div style="position :relative ; top : 0 ; right : 20;">
+    {{ post.created_at | date: "short" }}
+  </div>
+</div>
+
+<p>{{ post.content }}</p>
+
+<button class="btn btn-success" (click)="loveIt()">
+  love it !! <span *ngIf="post.loveIts > 0">(+{{ post.loveIts }})</span>
+</button>
+<button class="btn btn-danger" (click)="DontLoveIt()">
+  Don't love it !! <span *ngIf="post.loveIts < 0">({{ post.loveIts }})</span>
+</button>
