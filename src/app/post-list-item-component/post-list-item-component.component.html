@@ -8,10 +8,16 @@
 </div>
 
 <p>{{ post.content }}</p>
+<div class="row">
+  <button class="btn btn-success" (click)="loveIt()">
+    love it !! <span *ngIf="post.loveIts > 0">(+{{ post.loveIts }})</span>
+  </button>
+  <button class="btn btn-danger" (click)="DontLoveIt()">
+    Don't love it !!
+    <span *ngIf="post.loveIts < 0">({{ post.loveIts }})</span>
+  </button>
 
-<button class="btn btn-success" (click)="loveIt()">
-  love it !! <span *ngIf="post.loveIts > 0">(+{{ post.loveIts }})</span>
-</button>
-<button class="btn btn-danger" (click)="DontLoveIt()">
-  Don't love it !! <span *ngIf="post.loveIts < 0">({{ post.loveIts }})</span>
-</button>
+  <button class="btn btn-danger ml-auto" (click)="deletePost()">
+    Supprimer post
+  </button>
+</div>

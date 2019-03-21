@@ -61,7 +61,7 @@ export class PostsService {
     });
 
     //existe
-    if (postIndexToUpdate > 0) {
+    if (postIndexToUpdate >= 0) {
       this.posts[postIndexToUpdate] = post;
       this.savePosts();
       this.emitPosts();

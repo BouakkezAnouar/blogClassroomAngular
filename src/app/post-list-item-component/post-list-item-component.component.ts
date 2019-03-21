@@ -21,5 +21,9 @@ export class PostListItemComponentComponent implements OnInit {
     this.postService.updatePost(this.post);
   }
 
+  deletePost() {
+    this.postService.removePost(this.post);
+  }
+
   ngOnInit() {}
 }
