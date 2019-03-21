@@ -1,3 +1,4 @@
+import { PostsService } from "./services/posts.service";
 import { Post } from "./Post";
 import { Component } from "@angular/core";
 import * as firebase from "firebase";
