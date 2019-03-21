@@ -46,6 +46,19 @@ export class PostsService {
     this.savePosts();
     this.emitPosts();
   }
+
+  updatePost(post: Post) {
+    const postIndexToUpdate = this.posts.findIndex(postEl => {
+      if (postEl === post) return true;
+    });
+
+    //existe
+    if (postIndexToUpdate > 0) {
+      this.posts[postIndexToUpdate] = post;
+      this.savePosts();
+      this.emitPosts();
+    }
+  }
   constructor() {
     this.getPosts();
   }

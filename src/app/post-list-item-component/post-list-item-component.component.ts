@@ -1,3 +1,4 @@
+import { PostsService } from "./../services/posts.service";
 import { Component, OnInit, Input } from "@angular/core";
 import { Post } from "../Post";
 
@@ -8,16 +9,16 @@ import { Post } from "../Post";
 })
 export class PostListItemComponentComponent implements OnInit {
   @Input() post: Post;
-  constructor() {}
+  constructor(private postService: PostsService) {}
 
   loveIt() {
     this.post.loveIts++;
-    console.log(this.post.loveIts);
+    this.postService.updatePost(this.post);
   }
 
   DontLoveIt() {
     this.post.loveIts--;
-    console.log(this.post.loveIts);
+    this.postService.updatePost(this.post);
   }
 
   ngOnInit() {}
