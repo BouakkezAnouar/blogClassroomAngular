@@ -30,12 +30,10 @@ export class PostsService {
 
         //one element problem solve -- when database contain one element -> data.val() is just object not an array of abjects
         // if (!Array.isArray(this.posts)) this.posts = Object.values(this.posts);
-
         //solve empty element problem like this [empty , {} , {}] to be like this [{} ,{}] when deleting from firebase using UI console
         // this.posts = this.posts.filter(el => el != null);
 
         this.emitPosts();
-        console.log(this.posts);
       });
   }
 

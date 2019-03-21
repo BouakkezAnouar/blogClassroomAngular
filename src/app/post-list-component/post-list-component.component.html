@@ -1,4 +1,4 @@
-<ul class="list-group">
+<ul class="list-group" *ngIf="posts.length">
   <li
     class="list-group-item"
     *ngFor="let post of posts.reverse()"
@@ -10,6 +10,6 @@
     <post-list-item-component [post]="post"> </post-list-item-component>
   </li>
 </ul>
-<div class="alert alert-danger mt-5" *ngIf="!posts">
+<div class="alert alert-danger mt-5" *ngIf="!posts.length">
   no posts ! creer un nouveau post
 </div>
