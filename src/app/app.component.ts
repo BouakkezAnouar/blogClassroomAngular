@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
 import { Post } from "./Post";
+import { Component } from "@angular/core";
+import * as firebase from "firebase";
 
 @Component({
   selector: "app-root",
@@ -7,18 +8,15 @@ import { Post } from "./Post";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  posts: Post[] = [
-    new Post(
-      "Mon premier post",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur delectus necessitatibus voluptate debitis alias quia. Unde sed eaque nisi asperiores? Eveniet, numquam ullam molestias obcaecati iste excepturi delectus eos at."
-    ),
-    new Post(
-      "Mon deuxième",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur delectus necessitatibus voluptate debitis alias quia. Unde sed eaque nisi asperiores? Eveniet, numquam ullam molestias obcaecati iste excepturi delectus eos at."
-    ),
-    new Post(
-      "Encore un post",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur delectus necessitatibus voluptate debitis alias quia. Unde sed eaque nisi asperiores? Eveniet, numquam ullam molestias obcaecati iste excepturi delectus eos at."
-    )
-  ];
+  constructor() {
+    const config = {
+      apiKey: "AIzaSyAhvdVRwhyKbUUibYogy5xx_I-k8fGdAOI",
+      authDomain: "blog-d9c5e.firebaseapp.com",
+      databaseURL: "https://blog-d9c5e.firebaseio.com",
+      projectId: "blog-d9c5e",
+      storageBucket: "blog-d9c5e.appspot.com",
+      messagingSenderId: "949822170802"
+    };
+    firebase.initializeApp(config);
+  }
 }
